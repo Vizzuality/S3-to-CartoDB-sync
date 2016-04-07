@@ -50,3 +50,5 @@ exclude_paths:
 - db/
 - spec/
 - vendor/
+- "cartowrap/spec/cases/api_spec.rb"
+- "cartowrap/lib/cartowrap/api.rb"
