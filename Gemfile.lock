@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/modeset/teaspoon.git
+  remote: http://github.com/modeset/teaspoon
   revision: f5b67a2b79ef6f7b41f8ea0d43c3bfdd06f97c85
   branch: rails_5
   specs:
@@ -9,7 +9,7 @@ GIT
       teaspoon (>= 1.0.0)
 
 GIT
-  remote: git://github.com/sinatra/sinatra.git
+  remote: http://github.com/sinatra/sinatra
   revision: 4c7d38eb1b2cc02ce51029f28e0c3c34ca12ccfd
   branch: master
   specs:
