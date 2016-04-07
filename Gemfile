@@ -12,7 +12,7 @@ gem 's3'
 gem 'propono'
 gem 'resque', '~> 1.26'
 gem 'resque-scheduler'
-gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
+gem 'sinatra', git: 'http://github.com/sinatra/sinatra', branch: 'master'
 gem 'resque-web', require: 'resque_web'
 gem 'resque-scheduler-web'
 
@@ -36,7 +36,7 @@ gem 'cartowrap', path: 'cartowrap'
 gem 'pg', '~> 0.18'
 
 group :development, :test do
-  gem 'teaspoon-mocha', github: 'modeset/teaspoon', branch: 'rails_5'
+  gem 'teaspoon-mocha', git: 'http://github.com/modeset/teaspoon', branch: 'rails_5'
   gem 'hirb'
   gem 'awesome_print'
   gem 'faker'
