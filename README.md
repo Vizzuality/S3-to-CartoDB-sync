@@ -1,4 +1,4 @@
-# NYC Cityhall
+# S3 to CartoDB sync
 
 TODO: Write a project description
 
