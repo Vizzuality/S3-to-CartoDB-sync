@@ -22,6 +22,13 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
 
+# Deploy
+gem 'capistrano'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rvm'
+gem 'capistrano-passenger'
+
 # Api engine
 gem 'cartowrap', path: 'cartowrap'
 
