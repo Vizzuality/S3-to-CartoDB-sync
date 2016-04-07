@@ -102,15 +102,12 @@ module Cartowrap
       when 500
         initialize_options
         raise Cartowrap::ServerError.new(status, '')
-        return true
       when 401
         initialize_options
         raise Cartowrap::NoTokenError.new(status, body)
-        return true
       when 404
         initialize_options
         raise Cartowrap::NotFoundError.new(status, '')
-        return true
       else
         return false
       end

@@ -4,6 +4,13 @@ engines:
     enabled: true
   bundler-audit:
     enabled: true
+    exclude_fingerprints:
+    - 8e0e63552bbc532ec129feeb07b701d1
+    - eac745ad7337f78112ecbc8d69c74f60
+    - 41ae37dfc56866a4d0ecb078b8f8b562
+    - 41ae37dfc56866a4d0ecb078b8f8b562
+    - 783268b5e0c349209487abe14a3bc02b
+    - 783268b5e0c349209487abe14a3bc02b
   csslint:
     enabled: true
   coffeelint:
