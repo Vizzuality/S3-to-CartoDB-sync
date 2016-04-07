@@ -1,5 +1,4 @@
 class CartodbSyncFilesController < ApplicationController
-  skip_before_action :authenticate_user!
   def index
     if params[:token] == ENV['CARTODB_SYNC_TOKEN']
       send_file 'public/system/aggregate_data.csv'
