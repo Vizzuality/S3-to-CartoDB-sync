@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/Vizzuality/S3-to-CartoDB-sync/badges/gpa.svg)](https://codeclimate.com/github/Vizzuality/S3-to-CartoDB-sync)
+
 # S3 to CartoDB sync
 
 TODO: Write a project description
