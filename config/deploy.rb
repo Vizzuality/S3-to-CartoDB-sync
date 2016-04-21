@@ -25,11 +25,14 @@ set :foreman_template, 'upstart'
 set :foreman_export_path, '/etc/init'
 set :foreman_options, ->{ {
   app: 's3_to_cartodb_sync',
-  log: File.join(shared_path, 'log')
+  log: File.join(shared_path, 'log'),
+  user: 'ubuntu'
 } }
 
 
 namespace :deploy do
   after :finishing, 'deploy:cleanup'
   after 'deploy:publishing', 'deploy:restart'
+  after 'deploy:restart', 'foreman:export'
+  after 'foreman:export', 'foreman:restart'
 end
