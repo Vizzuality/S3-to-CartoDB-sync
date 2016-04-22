@@ -22,8 +22,8 @@ class ValueObject < ApplicationRecord
   validates :data_set_name, :as_of_dt, :geo_type, :geo_id, :current_val, presence: true
   validates_numericality_of :geo_id, :current_val
   validates_numericality_of :previous_val, :current_fytd, :previous_fytd, :previous_year_period, allow_blank: true
-  validates_format_of :as_of_dt, :with => /\d{4}\/\d{2}\/\d{2}/, :message => "is not a correct date format"
-  validates_format_of :created_dt, :with => /\d{4}\/\d{2}\/\d{2}/, :message => "is not a correct date format"
+  validates_format_of :as_of_dt, :with => /\d{4}-\d{2}-\d{2}/, :message => "is not a correct date format"
+  validates_format_of :created_dt, :with => /\d{4}-\d{2}-\d{2}/, :message => "is not a correct date format"
   validates :uid, uniqueness: true
   before_validation :generate_uid
   def self.update_or_create(attributes)
