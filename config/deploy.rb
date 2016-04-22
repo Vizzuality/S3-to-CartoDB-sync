@@ -10,7 +10,7 @@ set :rvm_type, :auto
 set :rvm_ruby_version, '2.3.0-p0@s3_to_cartodb_sync'
 set :rvm_roles, [:app, :web]
 
-set :branch, 'experimental/deploy-changes'
+set :branch, 'master'
 set :deploy_to, '~/s3_to_cartodb_sync'
 
 set :keep_releases, 5
