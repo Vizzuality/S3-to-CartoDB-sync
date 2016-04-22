@@ -22,13 +22,6 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'autoprefixer-rails'
 
-# Deploy
-gem 'capistrano'
-gem 'capistrano-rails'
-gem 'capistrano-bundler'
-gem 'capistrano-rvm'
-gem 'capistrano-passenger'
-
 # Api engine
 gem 'cartowrap', path: 'cartowrap'
 
@@ -42,6 +35,13 @@ group :development, :test do
   gem 'faker'
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.0'
+
+  # Deploy
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
 end
 
 group :development do
