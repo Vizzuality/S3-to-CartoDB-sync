@@ -40,11 +40,4 @@ class ValueObject < ApplicationRecord
   def valid_for_create_or_update?
     self.errors.messages.except(:uid) == 0
   end
-
-  def as_of_dt=(value)
-    self.as_of_dt = Date.parse(value) if value.present?
-  end
-  def created_dt=(value)
-    self.created_dt = Date.parse(value) if value.present?
-  end
 end
