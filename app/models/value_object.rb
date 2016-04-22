@@ -42,9 +42,9 @@ class ValueObject < ApplicationRecord
   end
 
   def as_of_dt=(value)
-    self.as_of_dt = Date.parse(value) if value.present?
+    self.as_of_dt = Date.parse(value.to_s) if value.present?
   end
   def created_dt=(value)
-    self.created_dt = Date.parse(value) if value.present?
+    self.created_dt = Date.parse(value.to_s) if value.present?
   end
 end
