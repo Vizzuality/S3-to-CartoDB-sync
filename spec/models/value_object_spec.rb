@@ -4,9 +4,7 @@
 #
 #  id                   :integer          not null, primary key
 #  data_set_name        :string
-#  as_of_dt             :string
 #  geo_type             :string
-#  created_dt           :string
 #  geo_id               :integer
 #  current_val          :integer
 #  previous_val         :integer
@@ -16,6 +14,8 @@
 #  uid                  :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
+#  as_of_dt             :date
+#  created_dt           :date
 #
 
 require 'rails_helper'

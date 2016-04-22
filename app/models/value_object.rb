@@ -4,9 +4,7 @@
 #
 #  id                   :integer          not null, primary key
 #  data_set_name        :string
-#  as_of_dt             :string
 #  geo_type             :string
-#  created_dt           :string
 #  geo_id               :integer
 #  current_val          :integer
 #  previous_val         :integer
@@ -16,12 +14,16 @@
 #  uid                  :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
+#  as_of_dt             :date
+#  created_dt           :date
 #
 
 class ValueObject < ApplicationRecord
   validates :data_set_name, :as_of_dt, :geo_type, :geo_id, :current_val, presence: true
   validates_numericality_of :geo_id, :current_val
   validates_numericality_of :previous_val, :current_fytd, :previous_fytd, :previous_year_period, allow_blank: true
+  validates_format_of :as_of_dt, :with => /\d{4}\/\d{2}\/\d{2}/, :message => "is not a correct date format"
+  validates_format_of :created_dt, :with => /\d{4}\/\d{2}\/\d{2}/, :message => "is not a correct date format"
   validates :uid, uniqueness: true
   before_validation :generate_uid
   def self.update_or_create(attributes)
@@ -33,7 +35,7 @@ class ValueObject < ApplicationRecord
     obj
   end
   def generate_uid
-    self.uid = Base64::urlsafe_encode64("#{self.data_set_name.parameterize}_#{self.as_of_dt.to_s.parameterize}_#{self.geo_id.to_s.parameterize}".parameterize, padding:false) if self.data_set_name && self.as_of_dt && self.geo_id
+    self.uid = Base64::urlsafe_encode64("#{self.data_set_name.parameterize}_#{self.as_of_dt.to_s.parameterize}_#{self.geo_id.to_s.parameterize}_#{self.geo_type.to_s.parameterize}".parameterize, padding:false) if self.data_set_name && self.as_of_dt && self.geo_id && self.geo_type
   end
   def valid_for_create_or_update?
     self.errors.messages.except(:uid) == 0
