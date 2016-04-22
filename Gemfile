@@ -28,7 +28,6 @@ gem 'capistrano-rails'
 gem 'capistrano-bundler'
 gem 'capistrano-rvm'
 gem 'capistrano-passenger'
-gem 'capistrano-foreman'
 
 # Api engine
 gem 'cartowrap', path: 'cartowrap'
