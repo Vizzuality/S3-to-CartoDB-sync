@@ -30,7 +30,7 @@ gem 'capistrano-rvm'
 gem 'capistrano-passenger'
 
 # Api engine
-gem 'cartowrap', path: 'cartowrap'
+gem 'cartowrap'
 
 # Active record
 gem 'pg', '~> 0.18'

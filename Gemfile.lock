@@ -18,14 +18,6 @@ GIT
       rack-protection (~> 1.5)
       tilt (~> 2.0)
 
-PATH
-  remote: cartowrap
-  specs:
-    cartowrap (0.1.0)
-      dotenv-rails
-      faraday
-      multi_json
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -95,6 +87,9 @@ GEM
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    cartowrap (0.1.0)
+      faraday
+      multi_json
     coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
@@ -317,7 +312,7 @@ DEPENDENCIES
   capistrano-passenger
   capistrano-rails
   capistrano-rvm
-  cartowrap!
+  cartowrap
   coffee-rails (~> 4.1.0)
   database_cleaner
   dotenv-rails (= 2.1.0)
