@@ -73,7 +73,7 @@ RSpec.describe ValueObject, :type => :model do
       current_val: 3
       )
     value_object.save!
-    uid_test = Base64::urlsafe_encode64("#{value_object.data_set_name.parameterize}_#{value_object.as_of_dt.to_s.parameterize}_#{value_object.geo_id.to_s.parameterize}".parameterize, padding:false)
+    uid_test = Base64::urlsafe_encode64("#{value_object.data_set_name.parameterize}_#{value_object.as_of_dt.to_s.parameterize}_#{value_object.geo_id.to_s.parameterize}_#{value_object.geo_type.to_s.parameterize}".parameterize, padding:false)
     expect(value_object.uid).to eq(uid_test)
   end
   it "should have an unique uid" do
@@ -92,7 +92,7 @@ RSpec.describe ValueObject, :type => :model do
       current_val: 3
       )
     value_object_a.save!
-    value_object_b.valid?
+    value_object_b.save!
     expect(value_object_b.errors[:uid]).to include("has already been taken")
   end
 end

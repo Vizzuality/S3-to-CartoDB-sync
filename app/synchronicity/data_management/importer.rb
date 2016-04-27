@@ -29,7 +29,12 @@ module Synchronicity
         value_object = ValueObject.new(new_hash)
         if value_object.valid?
           uid = value_object.generate_uid
-          ValueObject.where(uid: uid).update_or_create(new_hash)
+          #ValueObject.where(uid: uid).update_or_create(new_hash)
+          ValueObject.find_or_initialize_by(uid: uid).tap do |v|
+            v.assign_attributes(new_hash)
+            puts v
+            v.save!
+          end
           @imported_rows += 1
         else
           @errors << value_object.errors.messages.merge({line: i})

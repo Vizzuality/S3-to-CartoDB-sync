@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422082914) do
+ActiveRecord::Schema.define(version: 20160427193854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,5 +59,7 @@ ActiveRecord::Schema.define(version: 20160422082914) do
     t.date     "as_of_dt"
     t.date     "created_dt"
   end
+
+  add_index "value_objects", ["uid"], name: "index_value_objects_on_uid", unique: true, using: :btree
 
 end
