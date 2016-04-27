@@ -42,39 +42,6 @@ RSpec.describe ValueObject, :type => :model do
     value_object.valid?
     expect(value_object.errors[:data_set_name]).to include("can't be blank")
   end
-  it "is invalid without an as_of_dt" do
-    value_object = ValueObject.new(
-      data_set_name: 'dataset1',
-      geo_type: 'nyc',
-      as_of_dt: nil,
-      geo_id: 1,
-      current_val: 3
-      )
-    value_object.valid?
-    expect(value_object.errors[:as_of_dt]).to include("can't be blank")
-  end
-  it "is invalid without a geo_type" do
-    value_object = ValueObject.new(
-      data_set_name: 'dataset1',
-      geo_type: nil,
-      as_of_dt: '02-JAN-15 05.21.33',
-      geo_id: 1,
-      current_val: 3
-      )
-    value_object.valid?
-    expect(value_object.errors[:geo_type]).to include("can't be blank")
-  end
-  it "is valid without a geo_id" do
-    value_object = ValueObject.new(
-      data_set_name: 'dataset1',
-      geo_type: 'nyc',
-      as_of_dt: '02-JAN-15 05.21.33',
-      geo_id: nil,
-      current_val: 3
-      )
-    value_object.valid?
-    expect(value_object.errors[:geo_id]).to include("can't be blank")
-  end
   it "has a numeric geo_id" do
     value_object = ValueObject.new(
       data_set_name: 'dataset1',
@@ -85,17 +52,6 @@ RSpec.describe ValueObject, :type => :model do
       )
     value_object.valid?
     expect(value_object.errors[:geo_id]).to include("is not a number")
-  end
-  it "is invalid without a current_val" do
-    value_object = ValueObject.new(
-      data_set_name: 'dataset1',
-      geo_type: 'nyc',
-      as_of_dt: '02-JAN-15 05.21.33',
-      geo_id: 1,
-      current_val: nil,
-      )
-    value_object.valid?
-    expect(value_object.errors[:current_val]).to include("can't be blank")
   end
   it "has a numeric current_val" do
     value_object = ValueObject.new(
