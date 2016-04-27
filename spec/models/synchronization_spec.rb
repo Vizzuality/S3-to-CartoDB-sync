@@ -15,5 +15,7 @@
 require 'rails_helper'
 
 RSpec.describe Synchronization, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'responds to HEADERS' do
+    expect(Synchronization::HEADERS.class).to eq(Array)
+  end
 end
