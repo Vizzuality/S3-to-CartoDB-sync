@@ -32,7 +32,6 @@ module Synchronicity
           #ValueObject.where(uid: uid).update_or_create(new_hash)
           ValueObject.find_or_initialize_by(uid: uid).tap do |v|
             v.assign_attributes(new_hash)
-            puts v
             v.save!
           end
           @imported_rows += 1
