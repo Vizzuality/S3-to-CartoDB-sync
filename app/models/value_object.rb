@@ -6,11 +6,11 @@
 #  data_set_name        :string
 #  geo_type             :string
 #  geo_id               :integer
-#  current_val          :integer
-#  previous_val         :integer
-#  current_fytd         :integer
-#  previous_fytd        :integer
-#  previous_year_period :integer
+#  current_val          :float
+#  previous_val         :float
+#  current_fytd         :float
+#  previous_fytd        :float
+#  previous_year_period :float
 #  uid                  :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
@@ -19,7 +19,7 @@
 #
 
 class ValueObject < ApplicationRecord
-  validates :data_set_name, presence: true
+  validates :data_set_name, :as_of_dt, presence: true
   validates_numericality_of :geo_id, :current_val, allow_blank: true
   validates_numericality_of :previous_val, :current_fytd, :previous_fytd, :previous_year_period, allow_blank: true
   validates :uid, uniqueness: true

@@ -6,11 +6,11 @@
 #  data_set_name        :string
 #  geo_type             :string
 #  geo_id               :integer
-#  current_val          :integer
-#  previous_val         :integer
-#  current_fytd         :integer
-#  previous_fytd        :integer
-#  previous_year_period :integer
+#  current_val          :float
+#  previous_val         :float
+#  current_fytd         :float
+#  previous_fytd        :float
+#  previous_year_period :float
 #  uid                  :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
