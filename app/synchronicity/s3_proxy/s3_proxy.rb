@@ -7,7 +7,7 @@ module Synchronicity
 
     # get CSV files from S3
     def get_files
-      bucket = service.buckets.find('nycdata')
+      bucket = service.buckets.find(ENV["S3_BUCKET_NAME"])
       keys = bucket.objects.map(&:key)
       file_names = keys.map{|k| k.match(/upload\/.+\.csv/) ? k : nil}.reject(&:nil?)
       files = file_names.map{|f| bucket.objects.find(f)}
